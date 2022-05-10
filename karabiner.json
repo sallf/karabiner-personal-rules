@@ -95,37 +95,6 @@
                         ]
                     },
                     {
-                        "description": "spacebar to HYPER (SHIFT+COMMAND+OPTION+CONTROL) or space (If Alone)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_shift",
-                                        "modifiers": [
-                                            "right_command",
-                                            "right_control",
-                                            "right_option"
-                                        ]
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "spacebar"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "sd for delete",
                         "manipulators": [
                             {
@@ -304,6 +273,11 @@
                             },
                             {
                                 "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ]
+                                    },
                                     "simultaneous": [
                                         {
                                             "key_code": "j"
@@ -311,18 +285,13 @@
                                         {
                                             "key_code": "k"
                                         }
-                                    ],
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "shift"
-                                        ]
-                                    }
+                                    ]
                                 },
                                 "to": [
                                     {
                                         "key_code": "tab",
                                         "modifiers": [
-                                          "shift"
+                                            "shift"
                                         ]
                                     }
                                 ],
@@ -1095,64 +1064,21 @@
                     {
                         "description": "HYPER + A -> accent (`)",
                         "manipulators": [
-                          {
-                              "from": {
-                                  "key_code": "a",
-                                  "modifiers": {
-                                      "mandatory": [
-                                          "right_shift",
-                                          "right_command",
-                                          "right_control",
-                                          "right_option"
-                                      ]
-                                  }
-                              },
-                              "to": [
-                                  {
-                                      "key_code": "grave_accent_and_tilde"
-                                  }
-                              ],
-                              "type": "basic"
-                          }
-                        ]
-                    },
-                    {
-                        "description": "Shifts Move Forward and Backward by 1 word",
-                        "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "right_shift"
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_shift",
+                                            "right_command",
+                                            "right_control",
+                                            "right_option"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_shift"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "left_shift"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_shift"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "key_code": "grave_accent_and_tilde"
                                     }
                                 ],
                                 "type": "basic"
@@ -1160,14 +1086,14 @@
                         ]
                     },
                     {
-                        "description": "Atom specific modifiers - kl -> enter",
-
+                        "description": "Atom & VS Code specific modifiers - kl -> enter",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com\\.github\\.atom$"
+                                            "^com\\.github\\.atom$",
+                                            "^com\\.microsoft\\.VSCode$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
