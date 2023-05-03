@@ -78,6 +78,36 @@
             ]
           },
           {
+            "description": "spacebar & heald_down -> HYPER",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "spacebar"
+                },
+                "parameters": {
+                  "basic.to_if_alone_timeout_milliseconds": 250,
+                  "basic.to_if_held_down_threshold_milliseconds": 250
+                },
+                "to_if_alone": [
+                  {
+                    "key_code": "spacebar"
+                  }
+                ],
+                "to_if_held_down": [
+                  {
+                    "key_code": "right_shift",
+                    "modifiers": [
+                      "right_command",
+                      "right_control",
+                      "right_option"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "description": "sd for delete",
             "manipulators": [
               {
@@ -989,7 +1019,7 @@
             ]
           },
           {
-            "description": "Atom & VS Code specific modifiers - kl -> enter",
+            "description": "Atom & VS Code - kl -> enter",
             "manipulators": [
               {
                 "conditions": [
